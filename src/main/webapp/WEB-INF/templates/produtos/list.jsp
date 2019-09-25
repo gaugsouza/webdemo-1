@@ -22,7 +22,7 @@
 			<tr>
 				<th scope="col">#</th>
 				<th scope="col">Nome</th>
-				<th scope="col">Descrição</th>
+				<th scope="col">Preço</th>
 				<th scope="col"></th>
 			</tr>
 		</thead>
@@ -31,7 +31,7 @@
 				<tr>
 					<th scope="row">${produto.id}</th>
 					<td>${produto.nome}</td>
-					<td>${produto.descricao}</td>
+					<td>${produto.preco}</td>
 					<td>
 						<a href="/produtos/edit/${produto.id}">Editar</a>
 					</td>

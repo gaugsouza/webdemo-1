@@ -19,10 +19,10 @@
 			idCampo="nome-input" nomeCampo="nome" /> 
 		</div>
 		<div class="form-group">
-			<minha:validatedinputtext rotulo="Descrição" valor="${Produto.descricao}"
-				erroValidacao="${DescricaoInvalida}" invalido="${empty DescricaoInvalida}"
-				textoPlaceholder="Descricao do Produto"
-				idCampo="sobrenome-input" nomeCampo="descricao" />	
+			<minha:validatedinputtext rotulo="Preço" valor="${Produto.preco}"
+				erroValidacao="${PrecoInvalida}" invalido="${empty PrecoInvalida}"
+				textoPlaceholder="Preço do Produto"
+				idCampo="sobrenome-input" nomeCampo="preco" />	
 		</div>
 		
 		<a href="/produtos" class="btn btn-danger">Cancelar</a>

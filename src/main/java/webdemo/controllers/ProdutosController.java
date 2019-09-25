@@ -43,9 +43,9 @@ public class ProdutosController extends Controller {
 		
 		if(isValid(formData)) {
 			String nome = formData.get("nome");
-			String descricao = formData.get("descricao");
+			Double preco = Double.parseDouble(formData.get("preco"));
 			
-			Produto produto = new Produto(nome, descricao);
+			Produto produto = new Produto(nome, preco);
 			produto.salvar();
 			
 			getResponse().sendRedirect("/produtos?success=true");
@@ -71,16 +71,16 @@ public class ProdutosController extends Controller {
 		Produto produto = Produto.GetById(id);
 		
 		String nome = formData.get("nome");
-		String descricao = formData.get("descricao");
+		Double preco = Double.parseDouble(formData.get("preco"));
 		
 		if(isValid(formData)) {
 			produto.setNome(nome);
-			produto.setDescricao(descricao);
+			produto.setPreco(preco);
 			produto.salvar();
 			
 			getResponse().sendRedirect("/produtos?success=true");
 		}else {
-			Produto produtoInvalido = new Produto(nome, descricao);
+			Produto produtoInvalido = new Produto(nome, preco);
 			produtoInvalido.setId(id);
 			getRequest().setAttribute("Produto", produto);
 			
@@ -98,8 +98,8 @@ public class ProdutosController extends Controller {
 			isValid = false;
 		}
 		
-		if(!formData.containsKey("descricao") || formData.get("descricao").isEmpty()) {
-			getRequest().setAttribute("DescricaoInvalido", "A descrição do produto é obrigatória!");
+		if(!formData.containsKey("preco") || formData.get("preco").isEmpty()) {
+			getRequest().setAttribute("PrecoInvalido", "A preço do produto é obrigatória!");
 			isValid = false;
 		}
 				

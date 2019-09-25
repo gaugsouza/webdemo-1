@@ -7,7 +7,7 @@ import java.util.List;
 public class Produto {			
 	private int id;
 	private String nome;
-	private String descricao;
+	private Double preco;
 	
 	public int getId() {
 		return this.id;
@@ -23,16 +23,16 @@ public class Produto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getDescricao() {
-		return descricao;
+	public Double getPreco() {
+		return preco;
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setPreco(Double preco) {
+		this.preco = preco;
 	}
 	
-	public Produto(String nome, String descricao) {
+	public Produto(String nome, Double preco) {
 		this.nome = nome;
-		this.descricao = descricao;
+		this.preco = preco;
 	}
 	
 	public void salvar() {
